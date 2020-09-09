@@ -1,0 +1,16 @@
+clc;
+clear all;
+close all;
+x=input('Enter the first sequence');
+y=input('Enetr the second sequence');
+z=xcorr(x,y);
+disp(z);
+subplot(3,1,1);
+n1=0:length(x)-1;
+stem(n1,x);
+subplot(3,1,2);
+n2=0:length(y)-1;
+stem(n2,y);
+subplot(3,1,3);
+N=-length(x)+1:length(x)-1;
+stem(N,z);

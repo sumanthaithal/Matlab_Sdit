@@ -1,0 +1,23 @@
+clc;
+clear all;
+close all;
+A=input('enter the signal amplitude');
+fm=input('enetr the signal frequency');
+t=0:0.001:1;
+a=A.*cos(2*pi*fm*t);
+subplot(3,1,1);
+plot(t,a);
+Xlabel('t--');
+Ylabel('x(t)-->');
+title('original signal');
+fs=input('enter the samplig frequency');
+n=0:1/fs:1;
+b=A.*cos(2*pi*fm*n);
+subplot(3,1,2);
+stem(n,b);
+title('sampled signal');
+Xlabel('n--');
+Ylabel('y(n)-->');
+subplot(3,1,3);
+plot(n,b);%Reconstruction using linear interpolation
+title('reconstructed signal');

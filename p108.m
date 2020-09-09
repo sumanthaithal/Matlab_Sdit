@@ -1,0 +1,12 @@
+clc;
+clear all;
+close all;
+x1=[zeros(1,32),ones(1,64),zeros(1,32)];
+X1=fft(x1);
+X2=fftshift(X1);
+subplot(2,1,1);
+plot(x1);
+title('Time domain');
+subplot(2,1,2);
+plot(abs(X2));
+title('frequency domain');

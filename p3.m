@@ -1,0 +1,16 @@
+clc;
+clear all;
+close all;
+b=input('enter the numerator coefficient');
+a=input('enter the denominator coefficient');
+n=input('enter the length of the sequence');
+[h t]=impz(b,a,n);
+disp(h);
+subplot(2,1,1);
+stem(t,h);
+title('impulse response');
+x=input('enter input sequence');
+y=conv(x,h);
+disp(y);
+subplot(2,1,2);
+stem(y);

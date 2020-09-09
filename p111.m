@@ -1,0 +1,12 @@
+clc;
+clear all;
+close all;
+x=input('enter the sequence');
+n=0:1:length(x)-1;
+subplot(2,1,1);
+stem(n,x);
+y=xcorr(x);
+disp(y);
+subplot(2,1,2);
+N=-length(x)+1:length(x)-1;
+stem(N,y);

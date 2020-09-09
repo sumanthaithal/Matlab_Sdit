@@ -1,0 +1,11 @@
+clc;
+clear all;
+close all;
+x=-pi:0.05:pi;
+x1=sinc(x);
+X1=fft(x1);
+X2=fftshift(X1);
+subplot(2,1,1);
+plot(abs(X2));
+subplot(2,1,2);
+stem(x1);

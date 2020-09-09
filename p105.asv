@@ -1,0 +1,32 @@
+clc;
+clear all;
+close all;
+x=input('Enter the first sequence');
+h=input('Enter the second sequence');
+N1=length(x);
+N2=length(h);
+X=[x,zeros(1,N2)];
+H=[h,zeros(1,N1)];
+for i=1:N1
+    y(i)=0;
+    for j=1:N1
+        if(i-j+1>-0)
+            y(i)=y(i)+x(j).*H(i-j+1);
+        else
+        end
+    end
+end
+X1=fft(x,N1);
+X2=fft(h,N2);
+X=X1.*X2;
+N3=length(X);
+X7=ifft(X,N3);
+subplot(2,1,1);
+Z1=abs(X7);
+stem(X7);
+title('answer using DFT method');
+Y=fft(y,n);
+subplot (2,1,2);
+Z2=abs(y);
+stem(y);
+title('using defination');
